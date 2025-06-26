@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Carousel</title>
+  <style>
+    img {
+      width: 300px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Image Carousel</h2>
+  <img id="carousel" src="https://via.placeholder.com/300x200?text=Image+1" />
+  <br />
+  <button onclick="prev()">Previous</button>
+  <button onclick="next()">Next</button>
+
+  <script>
+    const images = [
+      "https://via.placeholder.com/300x200?text=Image+1",
+      "https://via.placeholder.com/300x200?text=Image+2",
+      "https://via.placeholder.com/300x200?text=Image+3"
+    ];
+    let index = 0;
+
+    function showImage() {
+      document.getElementById("carousel").src = images[index];
+    }
+
+    function next() {
+      index = (index + 1) % images.length;
+      showImage();
+    }
+
+    function prev() {
+      index = (index - 1 + images.length) % images.length;
+      showImage();
+    }
+  </script>
+</body>
+</html>

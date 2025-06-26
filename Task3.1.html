@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    header, footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .sidebar {
+      background: #f4f4f4;
+      padding: 10px;
+    }
+
+    .content {
+      background: #eaeaea;
+      padding: 10px;
+    }
+
+    /* Tablet */
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      header, footer {
+        font-size: 14px;
+      }
+
+      main {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Responsive Webpage</header>
+  <main>
+    <div class="sidebar">Sidebar</div>
+    <div class="content">Main Content</div>
+  </main>
+  <footer>Footer Area</footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Joke API</title>
+</head>
+<body>
+  <h2>Random Joke</h2>
+  <button onclick="getJoke()">Get Joke</button>
+  <p id="jokeText"></p>
+
+  <script>
+    async function getJoke() {
+      const response = await fetch("https://official-joke-api.appspot.com/random_joke");
+      const data = await response.json();
+      document.getElementById("jokeText").textContent = data.setup + " - " + data.punchline;
+    }
+  </script>
+</body>
+</html>
